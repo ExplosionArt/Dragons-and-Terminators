@@ -11,10 +11,12 @@ class Place(object):
         self.exit = exit
         self.terminators = []  # A list of Terminators
         self.dragon = None  # A Dragon
-        self.entrance = None  # A Place
+        self.entrance = None  # A Place, newly created, so specify as None
         # Phase 1: Add an entrance to the exit
         # BEGIN 1.2
         "*** YOUR CODE HERE ***"
+        if self.exit:
+            self.exit.entrance = self
         # END 1.2
 
     def add_fighter(self, fighter):
