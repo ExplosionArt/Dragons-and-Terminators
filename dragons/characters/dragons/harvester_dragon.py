@@ -9,7 +9,7 @@ class HarvesterDragon(Dragon):
 
     # OVERRIDE CLASS ATTRIBUTES HERE
     food_cost = 2
-    armor = 1
+    
     def action(self, colony):
         """Produce 1 additional food for the colony.
 
