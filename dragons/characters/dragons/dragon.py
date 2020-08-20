@@ -4,6 +4,7 @@ from ..fighter import Fighter
 class Dragon(Fighter):
     """A Dragon occupies a place and does work for the colony."""
     is_dragon = True
+    blocks_path = True  # Phase 2.4 for Ninja Dragon
     implemented = False  # Only implemented Dragon classes should be instantiated
     food_cost = 0
 

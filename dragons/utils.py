@@ -4,8 +4,7 @@ import random
 def random_or_none(s):
     """Return a random element of sequence S, or return None if S is empty."""
     assert isinstance(s, list), \
-        "random_or_none's argument should be a list but was a %s" % type(
-            s).__name__
+        "random_or_none's argument should be a list but was a %s" % type(s).__name__
     if s:
         return random.choice(s)
 

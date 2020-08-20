@@ -21,7 +21,9 @@ class Terminator(Fighter):
     def blocked(self):
         """Return True if this Terminator cannot advance to the next Place."""
         # BEGIN 2.4
-        return self.place.dragon is not None
+        if self.place.dragon is not None and self.place.dragon.blocks_path == True:
+            return True
+        return False
         # END 2.4
 
     def action(self, colony):

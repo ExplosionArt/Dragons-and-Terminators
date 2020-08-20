@@ -8,7 +8,9 @@ class FireDragon(Dragon):
     damage = 3
     # OVERRIDE CLASS ATTRIBUTES HERE
     # BEGIN 2.2
-    implemented = False  # Change to True to view in the GUI
+    food_cost = 5
+    armor = 3
+    implemented = True  # Change to True to view in the GUI
 
     # END 2.2
 
@@ -25,3 +27,26 @@ class FireDragon(Dragon):
         """
         # BEGIN 2.2
         "*** YOUR CODE HERE ***"
+        # Reduce armor by amount
+        self.armor -= amount
+
+        # Hint Suggest to iterate over a shallow copy of list of terminators present in self.place
+        terminator_list_copy = [i for i in self.place.terminators]
+
+        # Check if fire dragon is dead
+        if self.armor <= 0:
+            for terminator in terminator_list_copy:
+                # Reduce armor of terminator by 'damage' that dragons deals on death
+                # As well as Reflected damage
+                terminator.reduce_armor(amount + self.damage)
+            
+            # Since dragon is dead, remove it
+            self.place.remove_fighter(self)
+            self.death_callback()
+        
+        else:
+            for terminator in terminator_list_copy:
+                # Reduce terminator armor by 'Amount' as Reflected damage
+                terminator.reduce_armor(amount)
+
+        
