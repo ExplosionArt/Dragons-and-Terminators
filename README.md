@@ -18,4 +18,7 @@
 | Short Thrower | 2 | 1 | 1 | A cheaper version of Thrower Dragon that throws stones and damages the first Terminator in front of it that is still not in the Skynet and is atmost 3 places away from it's position. |
 | Fire Dragon | 5 | 3 | x | A special type of Dragon which does damage when it recieves damage. If it is damaged by 'x' armor units and does not die, it does a damage of 'x' armor units to all the terminators in it's place(reflected damage). If it dies, it does an additional amount of damage, which is by default 3. |
 | Hungry Dragon | 5 | 3 | x | A Hungry Dragon will select a random Terminator for it's place and eat it whole. After eating a Terminator, it must spend 3 turns digesting before eating again. If no terminator is available, it does nothing. |
- 
+| Ninja Dragon | 5 | 1 | 1 | A Ninja Dragon does not block the path of a Terminator that flies by. However, it damages all the Terminators the fly past it. |
+| Earth Dragon | 4 | 4 | 0 | An Earth Dragon does nothing each turn. However, it is useful especially because of it's large armor value, which blocks the Terminators. |
+| Bodyguard Dragon | 4 | 2 | 0 | A Bodyguard Dragon can contain another Dragon and protect it all in one place, while doing nothing by itself. Any damage by Terminator to a Dragon contained by Bodyguard Dragon will damage the Bodyguard Dragon. |
+| Tank Dragon | 6 | 2 | 0 | A Tank Dragon is an advanced type of Bodyguard Dragon which damages all the Terminators in it's place by 1, alongwith benefits of Bodyguard Dragon. |
