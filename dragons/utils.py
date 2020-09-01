@@ -25,7 +25,12 @@ def make_slow(action, terminator):
     action -- An action method of some Terminator
     """
     # BEGIN 4.4
+    # make_slow should simply stop the terminator
     "*** YOUR CODE HERE ***"
+    def slow_action(colony):
+        if colony.time % 2 == 0:
+            action(colony)
+    return slow_action
     # END 4.4
 
 
@@ -36,6 +41,11 @@ def make_scare(action, terminator):
     """
     # BEGIN 4.4
     "*** YOUR CODE HERE ***"
+    def scared_action(colony):
+        terminator.is_scared = True
+        action(colony)
+        terminator.is_scared = False
+    return scared_action
     # END 4.4
 
 
@@ -43,8 +53,20 @@ def apply_effect(effect, terminator, duration):
     """Apply a status effect to a TERMINATOR that lasts for DURATION turns."""
     # BEGIN 4.4
     "*** YOUR CODE HERE ***"
-    # END 4.4
+    old_action = terminator.action
 
+    def affected_action(colony):
+        nonlocal duration
+        if duration:
+            effect(old_action, terminator)(colony)
+            duration -= 1
+            if duration == 0 and effect == make_scare:
+                terminator.already_scared = True
+        else:
+            old_action(colony)
+
+    terminator.action = affected_action
+    # END 4.4
 
 class GameOverException(Exception):
     """Base game over Exception."""

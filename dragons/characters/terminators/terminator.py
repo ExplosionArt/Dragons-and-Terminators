@@ -8,6 +8,7 @@ class Terminator(Fighter):
     damage = 1
 
     # OVERRIDE CLASS ATTRIBUTES HERE
+    is_watersafe = True
 
     def sting(self, dragon):
         """Attack a Dragon, reducing its armor by 1."""
@@ -35,6 +36,8 @@ class Terminator(Fighter):
         destination = self.place.exit
         # BEGIN 4.4
         "*** YOUR CODE HERE ***"
+        if hasattr(self, 'is_scared') and self.is_scared and not hasattr(self, 'already_scared'):
+            destination = self.place.entrance
         # END 4.4
         if self.blocked():
             self.sting(self.place.dragon)

@@ -4,6 +4,7 @@ class Fighter:
     damage = 0
 
     # ADD CLASS ATTRIBUTES HERE
+    is_watersafe = False # Phase 4.1 WaterSafe Fighters
 
     def __init__(self, armor, place=None):
         """Create a Fighter with an ARMOR amount and a starting PLACE."""

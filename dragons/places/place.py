@@ -69,6 +69,8 @@ class Place(object):
             # Special handling for DragonKing
             # BEGIN 4.3
             "*** YOUR CODE HERE ***"
+            if (hasattr(self.dragon, 'isDragonKing') and self.dragon.isDragonKing) or (self.dragon.is_container and self.dragon.contained_dragon is not None and hasattr(self.dragon.contained_dragon, 'isDragonKing') and self.dragon.contained_dragon.isDragonKing):
+                return
             # END 4.3
 
             # Special handling for container dragons
