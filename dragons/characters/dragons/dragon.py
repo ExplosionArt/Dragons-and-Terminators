@@ -6,6 +6,7 @@ class Dragon(Fighter):
     is_dragon = True
     blocks_path = True  # Phase 2.4 for Ninja Dragon
     implemented = False  # Only implemented Dragon classes should be instantiated
+    is_container = False # Should be true only for Container Dragons
     food_cost = 0
 
     # ADD CLASS ATTRIBUTES HERE

@@ -29,11 +29,27 @@ class Place(object):
         There can be any number of Terminators in a Place.
         """
         if fighter.is_dragon:
+            # Is the place empty?
             if self.dragon is None:
                 self.dragon = fighter
             else:
                 # BEGIN 3.2
-                assert self.dragon is None, 'Two dragons in {0}'.format(self)
+                # Here self means place object
+                # Check if dragon already on place is an empty container dragon
+                if self.dragon.can_contain(fighter) and fighter.is_container == False:
+                    self.dragon.contain_dragon(fighter)
+                
+                # Elif since fighter is new, so if container, it can always contain, but place dragon must not be container
+                elif fighter.is_container and self.dragon.is_container == False:
+                    fighter.contain_dragon(self.dragon)
+
+                    # Since while removing the dragon, the container dragon is outer layer
+                    # So colony should see container dragon and not the dragon inside
+                    self.dragon = fighter
+                
+                else:
+                    # Two incompatible Dragons in same spot, gives error
+                    assert self.dragon is None, 'Two dragons in {0}'.format(self)
                 # END 3.2
         else:
             self.terminators.append(fighter)

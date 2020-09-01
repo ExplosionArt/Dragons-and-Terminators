@@ -10,9 +10,8 @@ class ThrowerDragon(Dragon):
     damage = 1
 
     # ADD/OVERRIDE CLASS ATTRIBUTES HERE
-    # Since all The thrower dragons have same food_cost, armor
+    # Since all The thrower dragons have same food_cost
     food_cost = 3
-    armor = 1
 
     # Default ThrowerDragon will have min_range as 0 and max_range as INFINITY(written as float ('inf'))
     min_range = 0

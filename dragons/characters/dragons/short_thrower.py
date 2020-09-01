@@ -7,7 +7,6 @@ class ShortThrower(ThrowerDragon):
     name = 'Short'
     # OVERRIDE CLASS ATTRIBUTES HERE
     food_cost = 2
-    armor = 1
     
     # BEGIN 2.1
     min_range = 0

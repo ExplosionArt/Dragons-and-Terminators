@@ -9,7 +9,7 @@ class FireDragon(Dragon):
     # OVERRIDE CLASS ATTRIBUTES HERE
     # BEGIN 2.2
     food_cost = 5
-    armor = 3
+    #armor = 3 Armor is a instance attribute
     implemented = True  # Change to True to view in the GUI
 
     # END 2.2
@@ -18,6 +18,7 @@ class FireDragon(Dragon):
         """Create a Dragon with a ARMOR quantity."""
         Dragon.__init__(self, armor)
 
+    # Since FireDragon has different actions on armor reduction, overwrite this method from Fighter Class
     def reduce_armor(self, amount):
         """Reduce armor by AMOUNT, and remove the FireDragon from its place if it
         has no armor remaining.
