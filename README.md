@@ -1,6 +1,8 @@
 # Dragons and Terminators
  Course Project for Python and OOP Concepts - 10xiitian IB Hubs.
  
+ ![Demo GIF](Demo.gif)
+ 
  Dragons vs Terminators is a tower defense game where the goal is to defend the Dragon's territory by obstructing the Terminators.
  
  ## Storyline of the game
